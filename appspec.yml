@@ -1,1 +1,12 @@
-
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/
+hooks:
+  Before Install:
+    - location: stop.bash
+      timeout: 100
+  After Install:
+    - location: start.bash
+      timeout: 100
